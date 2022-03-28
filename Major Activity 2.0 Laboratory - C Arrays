@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int acc(int arr[3][2],int id, int pin){
+    int flag = 0;
+    for(int i = 0; i<3; i++){
+        if(id == arr[i][0] && pin == arr[i][1]){
+            flag = 1;
+        }
+    }
+    return flag;
+}
+int main(){
+    int arr[3][2] = {{4321,1234},{8765,5678},{1010,2020}};
+    int id,pin;
+    printf("Enter ID#: ");
+    scanf("%d",&id);
+    printf("Enter PIN: ");
+    scanf("%d",&pin);
+    if(acc(arr,id,pin)){
+        printf("You have successfully logged in\nID#:%d",id);
+    } else {
+        printf("Invalid ID/PIN!");
+    }
+    return 0;
+} 
