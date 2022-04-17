@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+ 
+int main()
+{
+    //declaration of variable
+  	char str[255];
+  	int i, j, len, start, end;
+    
+    //getting user input
+  	printf("Enter any String : ");
+  	scanf("%[^\n]s", str);
+  	
+  	//reads the length of the string and assign to variable 'len'
+  	len = strlen(str);
+  	end = len - 1;
+  	
+  	//display output
+  	printf("Reverse order words: \n"); 	   
+  	
+  	//for loop to sort words and spaces
+  	for(i = len - 1; i >= 0; i--)
+	{
+	    // condition that read spaces
+		if(str[i] == ' ' || i == 0) 
+		{
+			if(i == 0)
+			{
+				start = 0;
+			}
+			else
+			{
+				start = i + 1;
+			}
+			
+			// condition that reverse the stored value
+			for(j = start; j <= end; j++) 
+			{
+				printf("%c", str[j]);
+			}
+			end = i - 1;
+			printf(" ");				
+		} 
+	}
+	
+  	return 0;
+}
