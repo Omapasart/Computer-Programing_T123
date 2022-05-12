@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    float orig, converted;
+    char origtemp, newtemp;
+
+    printf("Input original temperature value: ");
+    scanf("%f", &orig); 
+
+    printf("Select original temperature scale: ");
+    scanf("%s", &origtemp); 
+
+    if ((origtemp =='F') ||(origtemp =='f')) {
+        printf("Select converted temperature scale: ");
+        scanf("%s", &newtemp);
+
+        if ((newtemp =='C') ||(newtemp =='c')) {
+            converted = (orig - 32) * 5 / 9;
+            printf("%.2f  F = %.2f C.", orig, converted);
+        }
+        else if ((newtemp =='K') ||(newtemp =='k')) {
+            converted = (orig - 32) * 5 / 9 + 273.15;
+            printf("%.2f  F = %.2f K.", orig, converted);
+        }
+        else
+            printf("Already a Fahrenheit");
+    }
+
+    else if ((origtemp =='C') ||(origtemp =='c')) {
+        printf("Select converted temperature scale: ");
+        scanf("%s", &newtemp);
+
+        if ((newtemp =='F') ||(newtemp =='f')) {
+            converted = (orig * 9 / 5) + 32;
+            printf("%.2f  c = %.2f F.", orig, converted);
+        }
+        else if ((newtemp =='K') ||(newtemp =='k')) {
+            converted = orig + 273.15;
+            printf("%.2f  C = %.2f K.", orig, converted);
+        }
+        else
+            printf("Already a Celsius");
+    }
+
+    else if ((origtemp =='K') ||(origtemp =='k')) {
+        printf("Select converted temperature scale: ");
+        scanf("%s", &newtemp);
+
+        if ((newtemp =='F') ||(newtemp =='f')) {
+            converted = (orig - 273.15) * 9 / 5 + 32;
+            printf("%.2f  K = %.2f F.", orig, converted);
+        }
+        else if ((newtemp =='C') ||(newtemp =='c')) {
+            converted = orig - 273.15;
+            printf("%.2f  K = %.2f C.", orig, converted);
+        }
+        else
+            printf("Already a Kelvin");
+    }
+
+    else
+        printf("Invalid temperature scale. Please try again!");
+
+    return 0;
+}
