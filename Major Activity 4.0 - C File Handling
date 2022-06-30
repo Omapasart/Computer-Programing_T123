@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i, data, ID;
+    float math, science, english, sum = 0, average = 0;
+    char name[50];
+    printf("Enter no. of students: ");
+    scanf("%d", &data);
+
+    for(i=1; i<=data; i++){
+        printf("\nStudent Name %d: ", i);
+        scanf("%s", &name);
+    printf("Student ID Number: ");
+    scanf("%d", &ID);
+    printf("Math Grade: ");
+    scanf("%f", &math);
+    printf("Science Grade: ");
+    scanf("%f", &science);
+    printf("English Grade: ");
+    scanf("%f", &english);
+
+    sum = math + science + english;
+    average = sum / 3;
+
+    printf("\nTotal Grade = %.2f\n", sum);
+    printf("Grade Average = %.2f\n\n", average);
+    }
+
+    return 0;
+}
